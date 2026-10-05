@@ -1,0 +1,6 @@
+{
+  "name": "TransitPulse - Live Govt Bus Tracker",
+  "description": "Real-time government bus tracking near you with live GPS telemetry, dynamic arrival times, stop schedules, and crowd estimates.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
