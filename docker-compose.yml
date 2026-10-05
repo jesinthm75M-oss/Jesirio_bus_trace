@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  transit-pulse-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: transit-pulse-tracker
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - VITE_GOOGLE_MAPS_API_KEY=${VITE_GOOGLE_MAPS_API_KEY}
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:3000/']
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
